@@ -5,10 +5,8 @@ def nyc_pigeon_organizer(data)
   my_pigeons.each {|pigeon_name| organised_pigeons[pigeon_name] = Hash.new}
   
   data.each_key { |first_layer_key|
-    data[first_layer_key].each_key { 
-      |second_layer_key|
-      my_pigeons.map {
-      |pigeon_name| 
+    data[first_layer_key].each_key { |second_layer_key|
+      my_pigeons.map { |pigeon_name| 
         if data[first_layer_key][second_layer_key].include?(pigeon_name) then
           if organised_pigeons[pigeon_name][first_layer_key] == nil then
             organised_pigeons[pigeon_name][first_layer_key] = []
@@ -26,4 +24,4 @@ end
 
 # make an array of all the pigeons
 # use this array to go through the hash of arrays
-# when an item matches
+# when an item matches 
